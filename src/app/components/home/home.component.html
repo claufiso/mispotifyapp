@@ -1,0 +1,12 @@
+<app-loading *ngIf="blLoading"></app-loading>
+<div class="card-columns">
+	<div *ngFor="let obRelease of arNewReleases" class="card">
+		<img class="card-img-top" [src]="obRelease.images[0].url" alt="Card image cap">
+		<div class="card-body">
+			<h5 class="card-title">{{obRelease.name}}</h5>
+			<p class="card-text">
+				<span (click)="showArtist(obArtist)" *ngFor="let obArtist of obRelease.artists" class="badge badge-pill badge-primary puntero">{{obArtist.name}}</span>
+			</p>
+		</div>
+	</div>
+</div>
